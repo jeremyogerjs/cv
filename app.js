@@ -2,10 +2,44 @@ const menu = document.querySelector('nav');
 const adressBook = document.querySelector('#adress');
 const allMenuItem = document.querySelectorAll('li');
 const exitAdressBook = adressBook.firstElementChild;
+
+const downloadDoc = document.querySelector('#document');
+const exitDownloadDoc = downloadDoc.firstElementChild;
 const page = document.querySelectorAll('body')
 const navItem = document.querySelectorAll('.linkItem');
 
+const hoverLink = document.querySelectorAll('.hoverEffect');
 
+
+
+let changeColorBorderScroll = function(distance){
+
+    for(let i=0;i<hoverLink.length;i++){
+        if(distance >560){
+            hoverLink[i].classList.add('invisible');
+        }
+        else{
+            hoverLink[i].classList.remove('invisible'); 
+        }
+        
+    }
+}
+
+
+
+let changeBackgroundColor = function(color,item) {
+    let distance = window.scrollY - menu.clientHeight;
+    if( distance > 560){
+        changeColorBorderScroll(distance);
+        item.style.backgroundColor = color;
+        
+    }
+    else{
+        changeColorBorderScroll(distance);
+        item.style.backgroundColor = 'white';
+        
+    }
+}
 
 navItem.forEach((link) =>{
     link.addEventListener('click',(e) => {
@@ -17,7 +51,7 @@ navItem.forEach((link) =>{
         const navHeight = menu.getBoundingClientRect().height;
         let position = element.offsetTop - navHeight;
         
-        element.classList.add('visible');
+               //element.classList.add('visible');  manque fonctionnalité/animation pour faire disparaitre les autres sections.
         
         
         window.scrollTo({
@@ -28,18 +62,7 @@ navItem.forEach((link) =>{
     })
 });
 
-let changeBackgroundColor = function(color,item) {
-    let distance = window.scrollY - menu.clientHeight;
-    if( distance > 560){
 
-        item.style.backgroundColor = color;
-        
-    }
-    else{
-        item.style.backgroundColor = 'white';
-    }
-
-}
 
 exitAdressBook.addEventListener('click',function(){ //Event pour quitter les coordonnée de contact.
     
@@ -47,10 +70,19 @@ exitAdressBook.addEventListener('click',function(){ //Event pour quitter les coo
     adressBook.classList.add('inactive');
 });
 
+exitDownloadDoc.addEventListener('click',function(){ //Event pour quitter les coordonnée de contact.
+    
+    downloadDoc.classList.remove('active');
+    downloadDoc.classList.add('inactive');
+});
+
 allMenuItem[7].firstElementChild.addEventListener('click',function(e){  //event pour l'apparition des coordonnée de contact.
     
     e.preventDefault();
-    
+    if(downloadDoc.className == "active"){
+        downloadDoc.classList.remove('active');     // permet d'enlever les document a DL si active
+        downloadDoc.classList.add('inactive');
+    }
 
     if(adressBook.className =='inactive'){
         adressBook.classList.remove('inactive');
@@ -62,13 +94,35 @@ allMenuItem[7].firstElementChild.addEventListener('click',function(e){  //event 
     }
 });
 
+allMenuItem[8].firstElementChild.addEventListener('click',function(e){  //event pour l'apparition des document a télécharger
+    
+    e.preventDefault();
+    if(adressBook.className == "active"){
+        adressBook.classList.remove('active');          // permet d'enlever les coordonnée de contact si active
+        adressBook.classList.add('inactive');
+    }
+
+    if(downloadDoc.className =='inactive'){
+        downloadDoc.classList.remove('inactive');
+        downloadDoc.classList.add('active');
+    }
+    else{
+        downloadDoc.classList.remove('active');
+        downloadDoc.classList.add('inactive');
+    }
+});
+
 
 document.addEventListener('mouseover',function(e){      //change le background color de la navBar
 
     if(e.clientY <= menu.clientHeight){
+
+        
         changeBackgroundColor('white',menu);
     }
     else if(e.clientY >menu.clientHeight){
+
+       
         changeBackgroundColor('transparent',menu);
     } 
 })
@@ -77,7 +131,7 @@ document.addEventListener('mouseover',function(e){      //change le background c
 window.addEventListener('scroll',function(e){
     
     
-    changeBackgroundColor('transparent',menu);      //Permet de cchanger le background color de la navbar au scroll
+    changeBackgroundColor('transparent',menu);      //Permet de changer le background color de la navbar au scroll
 
    
    

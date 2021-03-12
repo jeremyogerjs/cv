@@ -8,6 +8,7 @@
     <title>Contactez moi !</title>
 </head>
 <body>
+    <div id="contact">
     <nav>
         <p id="prenom"><img src="img/code-solid.svg" alt="icone bracket coding"><a href="/index.html#Apropos">Jérémy Oger</a></p>
         <ul>
@@ -23,6 +24,12 @@
         </ul>
         
     </nav>
+
+    
+
+
+
+    
     <div id="formulaire">
         <h2>Contact</h2>
         <hr>
@@ -41,20 +48,20 @@
                 <div id="rowForm">
                     <div>
                         <label for="name">Nom complet</label>
-                        <input id="name" name="name" type="text" placeholder="Nom Prenom"  minlength="2">
+                        <input id="name" name="name" type="text" placeholder="Nom Prenom"  minlength="2" required>
                     </div>
                     <div>
                         <label for="phone">Téléphone</label>
-                        <input id="phone" name="phone" type="text" placeholder="Téléphone" maxlength="6" pattern="[0-9]" title="veuillez ne mettre que des chiffres">
+                        <input id="phone" name="phone" type="number" placeholder="Téléphone" maxlength="7" pattern="[0-9]" title="veuillez indiquez des chiffres" required>
                     </div>
                 </div>
                
     
                 <label for="email">Email</label>
-                <input id="email" name="email" type="email" placeholder="exemple@exemple.com" pattern="\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b">
+                <input id="email" name="email" type="email" placeholder="exemple@exemple.com" pattern="\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b" required>
     
                 <label for="message">Votre message</label>
-                <textarea id="message" name="message"></textarea>
+                <textarea id="message" name="message" placeholder="Ecrivez votre message ici !"></textarea>
                 <input id="submit" type="submit">
             </form>
 
@@ -77,6 +84,6 @@
         </div>
         <span>Copyright © 2021 All rights reserved - Jérémy Oger</span>                         
     </footer>
-    
+</div>
 </body>
 </html>

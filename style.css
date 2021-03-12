@@ -66,7 +66,7 @@ nav{
     justify-content: space-between;
     position: fixed;
     background-color: white;
-    transition: background-color 0.34s ease-in-out;
+    transition: background-color 0.4s ease-in-out;
 }
 
 .navhover{
@@ -75,9 +75,23 @@ nav{
 
 nav ul li{
     display: flex;
-    margin: 0 15px;
+    margin: 0 12px;
     height: 60%;
     align-items: center;
+    
+}
+
+.hoverEffect.invisible{
+    border-bottom: 1px solid transparent;
+    transition: border .35s ;
+}
+.hoverEffect{
+    border-bottom: 1px solid white;
+    transition: border .35s ;
+}
+
+.hoverEffect:hover{
+    border-bottom: 1px solid #252525;
 }
 
 nav ul {
@@ -101,28 +115,13 @@ nav li img{
     transition: opacity .35s ease-out;
 }
 
-nav li a ,#prenom a{
+nav li a ,#prenom a,#document a{
     text-decoration: none;
     color: #252525;
 }
 
-nav li a img:hover, #prenom a:hover{
+nav li a img:hover, #prenom a:hover,#document a:hover{
     opacity: 0.7;
-}
-
-nav li{
-    transition: margin .35s ease-out;
-}
-nav li:nth-child(2), nav li:nth-child(4){
-    transition: margin-right .35s ease-out;
-}
-.hoverEffect{
-    border-bottom: 1px solid transparent;
-    transition: border .35s ;
-    
-}
-.hoverEffect:hover{
-    border-bottom: #252525 solid 1px;
 }
 
 #prenom{
@@ -154,9 +153,9 @@ header div{
 .hidden{
     opacity: 0;
 }
-/*-----------------------------Adress Book------------------------------------------------*/
+/*-----------------------------Adress Book and document DL------------------------------------------------*/
 
-#adress{
+#adress, #document{
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -170,19 +169,19 @@ header div{
     transition: transform 1s ease-in-out,opacity 1.3s ease-in-out;
 }
 
-#adress.active{
+#adress.active,#document.active{
     
     opacity: 1;
     transform: translateX(0);
 }
 
-#adress.inactive{
+#adress.inactive,#document.inactive{
     
     opacity: 0;
-    transform: translateX(230px);
+    transform: translateX(270px);
     
 }
-#adress span{
+#adress span,#document span{
     cursor: pointer;
     position: absolute;
     right: 10px;
@@ -190,11 +189,11 @@ header div{
     transition: opacity .35s ease-out;
 
 }
-#adress span:hover{
+#adress span:hover,#document span:hover{
     opacity: 0.7;
 }
 
-#adress img{
+#adress img,#document img{
     width: 1em;
     height: 1em;
     padding: 0 10px;
@@ -330,6 +329,9 @@ header img{
 
 /*----------------------------Contact----------------------------------*/
 
+#contact{
+    height:100vh;
+}
 #coordonnee{
     width: max-content;
     margin: auto 0;
@@ -357,9 +359,9 @@ header img{
 }
 
 #formulaire{
-    
+    height: calc(100% - 170px);
     background-color: #fafafafa;
-    height: 100vh;
+    
 }
 
 #formulaire form{
