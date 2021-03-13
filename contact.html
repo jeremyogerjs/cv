@@ -4,32 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rosario:wght@300&display=swap" rel="stylesheet"> 
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
     <link href="style.css" rel="stylesheet">
     <title>Contactez moi !</title>
 </head>
 <body>
+
+    <div class="transition transition-2 is-active"></div>
     <div id="contact">
-    <nav>
-        <p id="prenom"><img src="img/code-solid.svg" alt="icone bracket coding"><a href="/index.html#Apropos">Jérémy Oger</a></p>
-        <ul>
-            <li class="hoverEffect"><a class="linkItem"  href="/index.html">Accueil</a></li>
-            <li class="hoverEffect"><a class="linkItem" href="/index.html#Apropos">A propos</a></li>
-            <li class="hoverEffect"><a class="linkItem" href="/index.html#competences">Compétences</a></li>
-            <li class="hoverEffect"><a class="linkItem" href="/index.html#formation">Formations & Expériences</a></li>
-            <li class="hoverEffect"><a href="/contact.html">Contact</a></li>
-            <li><a href="https://github.com/jeremyogerjs" target="_blank"><img src="img/github-brands.svg" alt="icone logo github"></a></li>
-            <li><a href="https://www.linkedin.com/in/jeremy-oger-a78143171/" target="_blank"><img src="img/linkedin-brands.svg" alt="icone facebook"></a></li>
-            <li><a href="#adress"><img src="img/address-book-solid.svg" alt="icone carnet d'adresse"></a></li>
-            <li><a href="#"><img src="img/download-solid.svg" alt="icone téléchargement"></a></li>
-        </ul>
-        
-    </nav>
-
-    
-
-
-
-    
+        <nav>
+            <div id="prenom" >
+                <img src="img/code-solid.svg" alt="icone bracket coding"><a href="#Apropos">
+                    <p class="letterName">J</p>
+                    <p class="letterName">é</p>
+                    <p class="letterName">r</p>
+                    <p class="letterName">é</p>
+                    <p class="letterName">m</p>
+                    <p class="letterName">y</p>
+                    <p class="letterName">O</p>
+                    <p class="letterName">g</p>
+                    <p class="letterName">e</p>
+                    <p class="letterName">r</p>
+                </a></div>
+            <ul>
+                <li class="hoverEffect"><a class="linkItem page"  href="/index.html">Accueil</a></li>
+                <li class="hoverEffect"><a class="linkItem" href="/index.html#Apropos">A propos</a></li>
+                <li class="hoverEffect"><a class="linkItem" href="/index.html#competences">Compétences</a></li>
+                <li class="hoverEffect"><a class="linkItem" href="/index.html#formation">Formations & Expériences</a></li>
+                <li class="hoverEffect"><a class="linkItem page" href="/contact.html">Contact</a></li>
+                <li><a href="https://github.com/jeremyogerjs" target="_blank"><img src="img/github-brands.svg" alt="icone logo github"></a></li>
+                <li><a href="https://www.linkedin.com/in/jeremy-oger-a78143171/" target="_blank"><img src="img/linkedin-brands.svg" alt="icone facebook"></a></li>
+                <li><a href="#adress"><img src="img/address-book-solid.svg" alt="icone carnet d'adresse"></a></li>
+                <li><a href="#document"><img src="img/download-solid.svg" alt="icone téléchargement"></a></li>
+            </ul>
+            
+        </nav>
     <div id="formulaire">
         <h2>Contact</h2>
         <hr>
@@ -85,5 +96,8 @@
         <span>Copyright © 2021 All rights reserved - Jérémy Oger</span>                         
     </footer>
 </div>
+<script src="script/anime.js"></script>
+<script src="script/transition.js"></script>
+
 </body>
 </html>

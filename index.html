@@ -6,21 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Rosario:wght@300&display=swap" rel="stylesheet">   
+    <link href="https://fonts.googleapis.com/css2?family=Rosario:wght@300&display=swap" rel="stylesheet"> 
+    
     <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.0.1/lib/anime.min.js"></script>
     <title>CV Jérémy Oger</title>
 </head>
 <body>
-    
+    <div class="transition transition-3 is-active"></div>
     <header>
         <nav>
-            <p id="prenom"><img src="img/code-solid.svg" alt="icone bracket coding"><a href="#Apropos">Jérémy Oger</a></p>
+            <div id="prenom" >
+                <img src="img/code-solid.svg" alt="icone bracket coding"><a href="#Apropos">
+                    <p class="letterName">J</p>
+                    <p class="letterName">é</p>
+                    <p class="letterName">r</p>
+                    <p class="letterName">é</p>
+                    <p class="letterName">m</p>
+                    <p class="letterName">y</p>
+                    <p class="letterName">O</p>
+                    <p class="letterName">g</p>
+                    <p class="letterName">e</p>
+                    <p class="letterName">r</p>
+                </a></div>
             <ul>
-                <li class="hoverEffect"><a class="linkItem"  href="#prenom">Accueil</a></li>
+                <li class="hoverEffect"><a class="linkItem page"  href="/index.html">Accueil</a></li>
                 <li class="hoverEffect"><a class="linkItem" href="#Apropos">A propos</a></li>
                 <li class="hoverEffect"><a class="linkItem" href="#competences">Compétences</a></li>
                 <li class="hoverEffect"><a class="linkItem" href="#formation">Formations & Expériences</a></li>
-                <li class="hoverEffect"><a href="/contact.html">Contact</a></li>
+                <li class="hoverEffect"><a class="linkItem page" href="/contact.html">Contact</a></li>
                 <li><a href="https://github.com/jeremyogerjs" target="_blank"><img src="img/github-brands.svg" alt="icone logo github"></a></li>
                 <li><a href="https://www.linkedin.com/in/jeremy-oger-a78143171/" target="_blank"><img src="img/linkedin-brands.svg" alt="icone facebook"></a></li>
                 <li><a href="#adress"><img src="img/address-book-solid.svg" alt="icone carnet d'adresse"></a></li>
@@ -31,7 +45,7 @@
 
 
         <div id="document" class="inactive">
-            <span><img src="img/times-solid.svg" alt="icone croix pour quitter"></span>
+            <span class="exit"><img src="img/times-solid.svg" alt="icone croix pour quitter"></span>
             
             <!--
                 <p>
@@ -44,7 +58,7 @@
             </p>
         </div>
         <div id="adress" class="inactive">
-            <span><img src="img/times-solid.svg" alt="icone croix pour quitter"></span>
+            <span class="exit"><img src="img/times-solid.svg" alt="icone croix pour quitter"></span>
             <p>
                 <img src="img/phone-solid.svg" alt="icone téléphone fixe">83-14-32
             </p>
@@ -54,7 +68,7 @@
         </div>
         <div id="hero">
             <div id="heroText">
-                <h1>Jérémy Oger</h1>
+                <h1 class="animate__animated animate__bounce">Jérémy Oger</h1>
                 <p class="heroSpe">En formation développeur Web/mobile</p>
                 <p>Futur développeur Web/mobile.</p>
             </div>
@@ -67,10 +81,13 @@
         <h2>A propos</h2>
         <hr>
         <div class="center">
-            <p id="description">Je suis actuellement en formation developpeur web/mobile au CFA de la CCI. 
-                J'ai commencé le developpement web en autodidacte en février 2020 et 
-                j'ai intégré cette formation pour approfondir mes connaissances et obtenir un diplôme.
-                Je suis quelqu'un de ponctuel,déterminé et honnête.
+            <p id="description">Je suis en formation développeur web/web mobile (bac +2)  au CFA de la CCI depuis le 8 février 2021.
+                Au départ, j’ai découvert la programmation par hasard et j’ai continué par intérêt. 
+                Etant issu d’un tout autre domaine (la charpente bois), j’ai commencé à me former en autodidacte. Au début, 
+                j’ai tâtonné, puis mon intérêt grandissant, je me suis inscrit à des formations en ligne sur udemy
+                (Algorithmique,javascript:la formation ultime) ou encore youtube(pierre giraud HTML&CSS) 
+                et ai finalement saisi l’opportunité de l’ouverture d’une session de formation au CFA de la CCI 
+                pour tâcher d’obtenir un diplôme et faire de la programmation web mon métier. 
             </p>
             <!--Mettre mon image profil-->
         </div> 
@@ -152,6 +169,9 @@
         </div>
         <span>Copyright © 2021 All rights reserved - Jérémy Oger</span>                         
     </footer>
-    <script src="/app.js"></script>
+    <script src="script/anime.js"></script>
+    <script src="script/app.js"></script>
+    <script src="script/transition.js"></script>
+    
 </body>
 </html>

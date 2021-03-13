@@ -5,12 +5,10 @@ const exitAdressBook = adressBook.firstElementChild;
 
 const downloadDoc = document.querySelector('#document');
 const exitDownloadDoc = downloadDoc.firstElementChild;
-const page = document.querySelectorAll('body')
+const page = document.querySelectorAll('body');
 const navItem = document.querySelectorAll('.linkItem');
 
 const hoverLink = document.querySelectorAll('.hoverEffect');
-
-
 
 let changeColorBorderScroll = function(distance){
 
@@ -21,14 +19,12 @@ let changeColorBorderScroll = function(distance){
         else{
             hoverLink[i].classList.remove('invisible'); 
         }
-        
     }
 }
 
-
-
 let changeBackgroundColor = function(color,item) {
     let distance = window.scrollY - menu.clientHeight;
+
     if( distance > 560){
         changeColorBorderScroll(distance);
         item.style.backgroundColor = color;
@@ -41,39 +37,11 @@ let changeBackgroundColor = function(color,item) {
     }
 }
 
-navItem.forEach((link) =>{
-    link.addEventListener('click',(e) => {
-        e.preventDefault();
-
-        const id = e.currentTarget.getAttribute('href').slice(1);
-        const element = document.getElementById(id);
-
-        const navHeight = menu.getBoundingClientRect().height;
-        let position = element.offsetTop - navHeight;
-        
-               //element.classList.add('visible');  manque fonctionnalité/animation pour faire disparaitre les autres sections.
-        
-        
-        window.scrollTo({
-            left:0,
-            top:position,
-            
-        })
-    })
-});
-
-
-
 exitAdressBook.addEventListener('click',function(){ //Event pour quitter les coordonnée de contact.
-    
+    animationExit.restart();
     adressBook.classList.remove('active');
     adressBook.classList.add('inactive');
-});
 
-exitDownloadDoc.addEventListener('click',function(){ //Event pour quitter les coordonnée de contact.
-    
-    downloadDoc.classList.remove('active');
-    downloadDoc.classList.add('inactive');
 });
 
 allMenuItem[7].firstElementChild.addEventListener('click',function(e){  //event pour l'apparition des coordonnée de contact.
@@ -82,8 +50,8 @@ allMenuItem[7].firstElementChild.addEventListener('click',function(e){  //event 
     if(downloadDoc.className == "active"){
         downloadDoc.classList.remove('active');     // permet d'enlever les document a DL si active
         downloadDoc.classList.add('inactive');
+        
     }
-
     if(adressBook.className =='inactive'){
         adressBook.classList.remove('inactive');
         adressBook.classList.add('active');
@@ -92,6 +60,13 @@ allMenuItem[7].firstElementChild.addEventListener('click',function(e){  //event 
         adressBook.classList.remove('active');
         adressBook.classList.add('inactive');
     }
+});
+
+exitDownloadDoc.addEventListener('click',function(){ //Event pour quitter les Download.
+    
+    animationExit.restart();
+    downloadDoc.classList.remove('active');
+    downloadDoc.classList.add('inactive');
 });
 
 allMenuItem[8].firstElementChild.addEventListener('click',function(e){  //event pour l'apparition des document a télécharger
@@ -109,33 +84,27 @@ allMenuItem[8].firstElementChild.addEventListener('click',function(e){  //event 
     else{
         downloadDoc.classList.remove('active');
         downloadDoc.classList.add('inactive');
+        exitDownloadDoc.classList.remove('active');
     }
 });
-
 
 document.addEventListener('mouseover',function(e){      //change le background color de la navBar
 
     if(e.clientY <= menu.clientHeight){
 
-        
         changeBackgroundColor('white',menu);
     }
     else if(e.clientY >menu.clientHeight){
 
-       
         changeBackgroundColor('transparent',menu);
     } 
 })
 
-
 window.addEventListener('scroll',function(e){
     
-    
-    changeBackgroundColor('transparent',menu);      //Permet de changer le background color de la navbar au scroll
-
-   
-   
+    changeBackgroundColor('transparent',menu); //Permet de changer le background color de la navbar au scroll
 });
+
 
 
     /*
