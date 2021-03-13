@@ -188,6 +188,14 @@ header div{
     height: max-content;
 }
 
+.doc{
+    cursor: pointer;
+}
+
+.doc img:hover{
+    opacity: 0.7;
+}
+
 /*-----------------------------Adress Book and document DL------------------------------------------------*/
 
 #adress, #document{
