@@ -37,56 +37,48 @@ let changeBackgroundColor = function(color,item) {
     }
 }
 
-exitAdressBook.addEventListener('click',function(){ //Event pour quitter les coordonnée de contact.
-    animationExit.restart();
-    adressBook.classList.remove('active');
-    adressBook.classList.add('inactive');
+//                                 Function for event 2 last icon menu
+let exitEventMenu = function(item,element){
 
-});
-
-allMenuItem[7].firstElementChild.addEventListener('click',function(e){  //event pour l'apparition des coordonnée de contact.
+    item.addEventListener('click',function(){ //Event pour quitter.
+        animationExit.restart();
+        element.classList.remove('active');
+        element.classList.add('inactive');
     
-    e.preventDefault();
-    if(downloadDoc.className == "active"){
-        downloadDoc.classList.remove('active');     // permet d'enlever les document a DL si active
-        downloadDoc.classList.add('inactive');
+    });
+}
+
+let preventClickMenu = function(element){
+
+    if(element.className == "active"){
+        element.classList.remove('active');     // permet d'enlever les document a DL si active
+        element.classList.add('inactive');
         
     }
-    if(adressBook.className =='inactive'){
-        adressBook.classList.remove('inactive');
-        adressBook.classList.add('active');
-    }
-    else{
-        adressBook.classList.remove('active');
-        adressBook.classList.add('inactive');
-    }
-});
+}
+let eventClickMenu = function(item,element,prevent){
 
-exitDownloadDoc.addEventListener('click',function(){ //Event pour quitter les Download.
-    
-    animationExit.restart();
-    downloadDoc.classList.remove('active');
-    downloadDoc.classList.add('inactive');
-});
-
-allMenuItem[8].firstElementChild.addEventListener('click',function(e){  //event pour l'apparition des document a télécharger
+    item.firstElementChild.addEventListener('click',function(e){  //event pour l'apparition des coordonnée de contact.
     
     e.preventDefault();
-    if(adressBook.className == "active"){
-        adressBook.classList.remove('active');          // permet d'enlever les coordonnée de contact si active
-        adressBook.classList.add('inactive');
-    }
-
-    if(downloadDoc.className =='inactive'){
-        downloadDoc.classList.remove('inactive');
-        downloadDoc.classList.add('active');
+    preventClickMenu(prevent);
+   
+    if(element.className =='inactive'){
+        element.classList.remove('inactive');
+        element.classList.add('active');
     }
     else{
-        downloadDoc.classList.remove('active');
-        downloadDoc.classList.add('inactive');
-        exitDownloadDoc.classList.remove('active');
+        element.classList.remove('active');
+        element.classList.add('inactive');
     }
-});
+    });
+
+}
+exitEventMenu(exitAdressBook,adressBook);
+eventClickMenu(allMenuItem[7],adressBook,downloadDoc);
+
+exitEventMenu(exitDownloadDoc,downloadDoc);
+eventClickMenu(allMenuItem[8],downloadDoc,adressBook);
 
 document.addEventListener('mouseover',function(e){      //change le background color de la navBar
 
@@ -104,75 +96,3 @@ window.addEventListener('scroll',function(e){
     
     changeBackgroundColor('transparent',menu); //Permet de changer le background color de la navbar au scroll
 });
-
-
-
-    /*
-    let distance = window.scrollY - menu.clientHeight;
-    if(distance >558){
-        for(let i=0;i<allMenuItem.length;i++){
-            allMenuItem[i].style.margin = '0 11px';  
-        }
-        if(distance >883){
-            for(let i=0;i<allMenuItem.length;i++){
-                allMenuItem[i].style.margin = '0 15px';  
-            }
-            if(distance>1057){
-                
-                for(let i=2;i<allMenuItem.length;i++){
-                    allMenuItem[i].style.margin = '0 6px';
-                }
-                if(distance>1120){
-                    allMenuItem[1].style.marginRight = '220px';
-                }
-                
-                if(distance>1522){
-                    allMenuItem[1].style.marginRight = '13px'; 
-                    for(let i=2;i<allMenuItem.length;i++){
-                        allMenuItem[i].style.margin = '0 13px';
-                    }
-                    
-                }
-                if(distance >1751){
-                    for(let i=4;i<allMenuItem.length;i++){
-                        allMenuItem[i].style.margin = '0 8px';
-                    }
-                }
-                if(distance >1851){
-                    allMenuItem[3].style.marginRight = '40em';
-                }
-                if(distance >2350){
-
-                    allMenuItem[3].style.marginRight = '15px';
-                    for(let i=4;i<allMenuItem.length;i++){
-                        allMenuItem[i].style.margin = '0 15px';
-                    }
-                }
-                if(distance>2570){
-                    
-                    for(let i=4;i<allMenuItem.length;i++){
-                        allMenuItem[i].style.margin = '0 8px';
-                    }
-                    allMenuItem[3].style.marginRight = '40em';
-                }
-                if(distance>2956){
-                    allMenuItem[3].style.marginRight = '15px';
-
-                    for(let i=4;i<allMenuItem.length;i++){
-                        allMenuItem[i].style.margin = '0 15px';
-                    }
-                }
-                
-            }
-        }
-    }
-    
-    
-    else{
-        for(let i=0;i<allMenuItem.length;i++){
-            allMenuItem[i].style.margin = '0 15px';
-        }
-    }
-})
-*/
-

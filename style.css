@@ -373,9 +373,7 @@ header img{
 
 /*----------------------------Contact----------------------------------*/
 
-#contact{
-    height:100vh;
-}
+
 #coordonnee{
     width: max-content;
     margin: auto 0;
@@ -399,9 +397,7 @@ header img{
 .align {
     display: flex;
     justify-content: space-evenly;
-    padding-top: 3em;
 }
-
 #formulaire{
     height: calc(100% - 170px);
     background-color: #fafafafa;
