@@ -13,10 +13,11 @@
 <body>
 
     <div class="transition transition-2 is-active"></div>
-    <div id="contact">
+    
         <nav>
             <div id="prenom" >
-                <img src="img/code-solid.svg" alt="icone bracket coding"><a href="#Apropos">
+                <img src="img/code-solid.svg" alt="icone bracket coding">
+                <a href="index.html#Apropos">
                     <p class="letterName">J</p>
                     <p class="letterName">é</p>
                     <p class="letterName">r</p>
@@ -35,54 +36,55 @@
                 <li class="hoverEffect"><a class="linkItem" href="index.html#formation">Formations & Expériences</a></li>
                 <li class="hoverEffect"><a class="linkItem page" href="contact.html">Contact</a></li>
                 <li><a href="https://github.com/jeremyogerjs" target="_blank"><img src="img/github-brands.svg" alt="icone logo github"></a></li>
-                <li><a href="https://www.linkedin.com/in/jeremy-oger-a78143171/" target="_blank"><img src="img/linkedin-brands.svg" alt="icone facebook"></a></li>
-                <li class="doc"><img src="img/address-book-solid.svg" alt="icone carnet d'adresse"></li>
-                <li class="doc"><img src="img/download-solid.svg" alt="icone téléchargement"></li>
+                <li><a href="https://www.linkedin.com/in/jeremy-oger-a78143171/" target="_blank"><img src="img/linkedin-brands.svg" alt="icone linkedin"></a></li>
             </ul>
-            
-        </nav>
-    <div id="formulaire">
-        <h2>Contact</h2>
-        <hr>
-        <div class="align">
-
-            <div id="coordonnee">
-                <p >
-                    <img src="img/phone-solid.svg" alt="icone téléphone fixe">83-14-32
-                </p>
-                <p>
-                    <img src="img/envelope-solid.svg" alt="icone enveloppe">j.oger@cci-formation.nc
-                </p>
+            <div id="menu-mobile">
+                <span></span>
             </div>
-            <form>
+        </nav>
 
-                <div id="rowForm">
-                    <div>
-                        <label for="name">Nom complet</label>
-                        <input id="name" name="name" type="text" placeholder="Nom Prenom"  minlength="2" required>
-                    </div>
-                    <div>
-                        <label for="phone">Téléphone</label>
-                        <input id="phone" name="phone" type="tel" placeholder="Téléphone" maxlength="6" pattern="^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$" title="veuillez indiquez des chiffres" required>
-                    </div>
+        <div id="formulaire">
+            <h2>Contact</h2>
+            <hr>
+            <div class="align">
+
+                <div id="coordonnee">
+                    <p >
+                        <img src="img/phone-solid.svg" alt="icone téléphone fixe">83-14-32
+                    </p>
+                    <p>
+                        <img src="img/envelope-solid.svg" alt="icone enveloppe">j.oger@cci-formation.nc
+                    </p>
                 </div>
-               
-    
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" placeholder="exemple@exemple.com" pattern="\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b" required>
-    
-                <label for="message">Votre message</label>
-                <textarea id="message" name="message" placeholder="Ecrivez votre message ici !"></textarea>
-                <input id="submit" type="submit">
-            </form>
+                <form>
 
+                    <div id="rowForm">
+                        <div>
+                            <label for="name">Nom complet</label>
+                            <input id="name" name="name" type="text" placeholder="Nom Prenom"  minlength="2" required>
+                        </div>
+                        <div>
+                            <label for="phone">Téléphone</label>
+                            <input id="phone" name="phone" type="tel" placeholder="Téléphone" maxlength="6" pattern="^((\+\d{1,3}(-| )?\(?\d\)?(-| )?\d{1,5})|(\(?\d{2,6}\)?))(-| )?(\d{3,4})(-| )?(\d{4})(( x| ext)\d{1,5}){0,1}$" title="veuillez indiquez des chiffres" required>
+                        </div>
+                    </div>
+                
+        
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" placeholder="exemple@exemple.com" pattern="\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b" required>
+        
+                    <label for="message">Votre message</label>
+                    <textarea id="message" name="message" placeholder="Ecrivez votre message ici !"></textarea>
+                    <input id="submit" type="submit">
+                </form>
+            </div>
         </div>
-    </div>
+    
 
     <footer>
         <div id="reseaux">
             <a href="https://github.com/jeremyogerjs" target="_blank"><img src="img/github-brands.svg" alt="icone github"></a>
-            <a href="https://www.linkedin.com/in/jeremy-oger-a78143171/" target="_blank"><img src="img/linkedin-brands.svg" alt="icone facebook"></a>
+            <a href="https://www.linkedin.com/in/jeremy-oger-a78143171/" target="_blank"><img src="img/linkedin-brands.svg" alt="icone linkedin"></a>
         </div>
         <div id="menuFooter">
             <ul>
@@ -98,6 +100,16 @@
 </div>
 <script src="script/anime.js"></script>
 <script src="script/transition.js"></script>
+<script type="text/javascript">
+    const menu = document.querySelector('nav');
+    const menuMobile = menu.firstElementChild.nextElementSibling;
+    const btnMobile = document.querySelector('#menu-mobile');
+   
+    btnMobile.addEventListener('click',function(){
 
+        menuMobile.classList.toggle('active');
+        btnMobile.classList.toggle('active');
+    })
+</script>
 </body>
 </html>

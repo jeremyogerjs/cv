@@ -96,3 +96,15 @@ window.addEventListener('scroll',function(e){
     
     changeBackgroundColor('transparent',menu); //Permet de changer le background color de la navbar au scroll
 });
+
+const menuMobile = menu.firstElementChild.nextElementSibling;
+const btnMobile = document.querySelector('#menu-mobile');
+btnMobile.addEventListener('click',function(){
+
+menuMobile.classList.toggle('active');
+btnMobile.classList.toggle('active');
+exitEventMenu(btnMobile,adressBook);
+exitEventMenu(btnMobile,downloadDoc);
+})
+
+
