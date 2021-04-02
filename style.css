@@ -29,6 +29,8 @@ hr{
 }
 
 /*-------------------------------------Page transition-------------------------------------------*/
+
+
 .transition-2{
     background-color: #252525;
     position: fixed;
@@ -135,6 +137,8 @@ nav ul {
     align-items: center;
     height: 100%;
     padding-right: 1em;
+    margin-block-start: 0;
+    margin: auto 0;
 }
 
 nav:first-child{
@@ -275,14 +279,13 @@ header div{
     
     opacity: 1;
     transform: translateX(0);
-    display: initial;
+    
 }
 
 #adress.inactive,#document.inactive{
     
     opacity: 0;
     transform: translateX(270px);
-    display: none;
     
 }
 #adress span,#document span{
@@ -657,21 +660,23 @@ footer span{
     #adress,#document{
         right: unset;
         width: 199px;
-    }
-    #adress{
+        padding: 15px 0;
+        border-radius: unset;
         font-size: 14px;
+    }
+    #adress img,#document img{
+        padding: 0 2px;
     }
 
     #adress.active,#document.active{
-    
         display: initial;
     }
 
-    #adress.inactive,#document.inactive{
-    
-        
-        display: none;
-        
+    #adress.inactive,#document.inactive{ 
+        display: none;  
+    }
+    #adress span,#document span{
+        right: 55px;
     }
     #menu-mobile{
         display: initial;
