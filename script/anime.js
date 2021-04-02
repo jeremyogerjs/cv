@@ -1,7 +1,7 @@
 const prenom = document.querySelector('#prenom');
 
 const letterPrenom = document.querySelectorAll('.letterName');
-console.log(prenom.lastElementChild)
+
 
 
 anime({
