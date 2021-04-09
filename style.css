@@ -313,7 +313,7 @@ header div{
 
 /*------------------------------------Header hero----------------------------------------------*/
 #hero{
-    height: 40em;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -328,6 +328,7 @@ header div{
     flex-direction: column;
     text-align: center;
     text-transform: uppercase;
+    transform: translateY(20px);
 }
 
 #heroText h1{
