@@ -170,7 +170,7 @@ nav li a img:hover, #prenom a:hover,#document a:hover{
     font-size: 1.5em; 
     font-weight: 700; 
     width: max-content;
-    
+    text-transform: uppercase;
 }
 #prenom a {
     display: flex;
