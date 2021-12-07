@@ -27,43 +27,6 @@ hr{
     border: none;
     margin: 0 auto 1em auto;
 }
-
-/*-------------------------------------Page transition-------------------------------------------*/
-
-
-.transition-2{
-    background-color: #252525;
-    position: fixed;
-    pointer-events: none;
-    transition: .35s ease-out;
-    z-index: 1000;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    right: -100%;
-}
-
-.transition-2.is-active{
-    right: 0;
-    pointer-events: all;
-}
-
-.transition-3{
-    background-color: #252525;
-    position: fixed;
-    pointer-events: none;
-    transition: .35s ease-out;
-    z-index: 1000;
-    top: 100%;
-    left: 0;
-    height: 100%;
-    width: 100%;
-}
-
-.transition-3.is-active{
-    top: 0;
-    pointer-events: all;
-}
 /*----------------------------Scrollbar design----------------------------------------------------*/
 
 ::-webkit-scrollbar{
